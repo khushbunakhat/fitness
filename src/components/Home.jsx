@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import profile from "./../images/profile-pic.jpeg";
 import styles from "./styles.module.css";
 import Video from "./Video";
-
+import Data from "./Data.json"
 
 function Home(){
+    const[search,setSearch]=useState("");
+    const[video,setVideo]=useState(Data);
+    const set=(e)=>{
+        let val=e.target.value;
+        setSearch(val);
+    //console.log(search);  
+      const vid=Data.filter((video)=>{
+                if(video.Title.includes(search)){
+                    return true;
+                }
+                else{
+                    return false;
+                }     
+                })
+            console.log(vid);
+               setVideo(vid)
+    }
     return(
         <>
         <div>
@@ -25,24 +42,18 @@ function Home(){
             </div>
 
             <div className={styles.logo}>
-          
-                <img width="50px"src="https://cdn-icons-png.flaticon.com/512/733/733547.png"alt="facebook" />
-                
+                <img width="50px"src="https://cdn-icons-png.flaticon.com/512/733/733547.png"alt="facebook" />                
             </div>
-
             <div className={styles.logo}>
-               
-                <img width="50px"height="60px"src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"alt="youtube" />
-                
+                <img width="50px"height="60px"src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"alt="youtube" />   
             </div>
-
-           
             </div>
             <div className={styles.rightbox}>
-        <Video/>
+            <label>Search</label>
+             <input type="search"value={search}onChange={set}/>
+             <Video name={video}/>
+               </div>
             </div>
-        </div>
-    
         </>
     )
 }

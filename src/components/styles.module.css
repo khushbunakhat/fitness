@@ -4,13 +4,12 @@
 .photo{
     width:200px;
     height:200px;
-    border-radius:50%;
-    
+    border-radius:50%; 
 }
 .leftBox{
     padding:2%;
     width:25%;
-    height:1000px;
+    height:1060px;
     background-color:#FADBD8 ;
     box-shadow: 5px 10px #e9d5d5;
     float:left;
@@ -18,12 +17,14 @@
 .logo{
     float:left;
     margin:10px;
+    
 }
 .rightbox{
     float:right;
     background-color:#FADBD8 ;
     box-shadow:5px 10px #f0c9c9 ;
     margin-left:10px;
+    margin-top:0;
     width:70%;
 }
 .videobox{
@@ -31,7 +32,7 @@
     background-color: rgb(165, 165, 235);
     width:30%;
     float:left;
-    margin:10px;
+    margin:8px;
     height:50%;
 }
 
